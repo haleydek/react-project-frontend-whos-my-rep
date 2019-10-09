@@ -14,7 +14,6 @@ const repsReducer = (state = {
 
         case 'ADD_REPS':
             return {
-                ...state,
                 divisions: action.payload.divisions,
                 offices: action.payload.offices,
                 officials: action.payload.officials,

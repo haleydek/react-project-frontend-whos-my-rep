@@ -18,10 +18,17 @@ class App extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  console.log("state: ", state)
+  return {
+    reps: state.reps
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     fetchReps: (address) => dispatch(fetchReps(address))
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
