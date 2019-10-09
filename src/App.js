@@ -1,13 +1,27 @@
 import React from 'react';
 import './App.css';
+import { connect } from 'react-redux';
+import { fetchReps } from './actions/fetchReps';
 
-const GOOGLE_API_URL = `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.REACT_APP_API_KEY}&address=`;
+export const GOOGLE_API_URL = `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.REACT_APP_API_KEY}&address=`;
 
-function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    this.props.fetchReps(55408);
+  }
+
+  render() {
+    return (
+      <div className="App">
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchReps: (address) => dispatch(fetchReps(address))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(App);

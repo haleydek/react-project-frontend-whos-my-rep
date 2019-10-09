@@ -1,17 +1,23 @@
-const repsReducer = (state = { reps: [], loading: false }, action) => {
+const repsReducer = (state = {
+    divisions: [],
+    offices: [],
+    officials: [],
+    loading: false
+}, action) => {
     switch (action.type) {
 
         case 'LOADING_REPS':
             return {
                 ...state,
-                reps: [...state.reps],
                 loading: true
             }
 
         case 'ADD_REPS':
             return {
                 ...state,
-                reps: action.reps,
+                divisions: action.payload.divisions,
+                offices: action.payload.offices,
+                officials: action.payload.officials,
                 loading: false
             }
         
