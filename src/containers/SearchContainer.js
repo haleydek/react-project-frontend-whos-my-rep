@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchReps } from '../actions/fetchReps';
+import Search from '../components/Search';
 
 class SearchContainer extends React.Component {
     render(){
