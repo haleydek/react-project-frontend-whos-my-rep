@@ -1,5 +1,5 @@
 import React from 'react';
-import RepTitle from './RepTitle';
+import Rep from './Rep';
 
 const RepsList = (props) => {
     const { repsData } = props;
@@ -20,7 +20,7 @@ const RepsList = (props) => {
 
     return (
         <div>
-            {repsData.titles.map(title => <RepTitle title={title} reps={getRepsWithTitle(title)}/> )}
+            {repsData.titles.map(title => <Rep title={title} reps={getRepsWithTitle(title)}/> )}
         </div>
     )
 }

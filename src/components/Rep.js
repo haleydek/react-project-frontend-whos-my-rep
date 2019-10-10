@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RepTitle = (props) => {
+const Rep = (props) => {
     console.log("RepTitle props:", props);
 
     return (
@@ -11,4 +11,4 @@ const RepTitle = (props) => {
     )
 }
 
-export default RepTitle;
+export default Rep;
