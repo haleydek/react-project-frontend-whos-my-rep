@@ -1,4 +1,5 @@
 const repsReducer = (state = {
+    addressInput: [],
     divisions: [],
     offices: [],
     officials: [],
@@ -14,6 +15,8 @@ const repsReducer = (state = {
 
         case 'ADD_REPS':
             return {
+                ...state,
+                addressInput: action.payload.normalizedInput,
                 divisions: action.payload.divisions,
                 offices: action.payload.offices,
                 officials: action.payload.officials,
