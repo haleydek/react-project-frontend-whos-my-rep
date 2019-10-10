@@ -1,11 +1,26 @@
 import React from 'react';
-import Rep from './Rep';
+import RepTitle from './RepTitle';
 
 const RepsList = (props) => {
+    const { repsData } = props;
+
+    console.log("RepsList props:", repsData);
+
+    const getRepsWithTitle = (title) => {
+        console.log("title in getRepsWithTitle:", title);
+        
+        return repsData.reps.filter((rep, index) => {
+            if (title.officialIndices.includes(index)) {
+                return rep
+            }
+        })
+    };
+
+
+
     return (
         <div>
-            <h3>Inside RepsList</h3>
-            <Rep />
+            {repsData.titles.map(title => <RepTitle title={title} reps={getRepsWithTitle(title)}/> )}
         </div>
     )
 }

@@ -1,8 +1,8 @@
 const repsReducer = (state = {
     addressInput: [],
     divisions: [],
-    offices: [],
-    officials: [],
+    titles: [],
+    reps: [],
     loading: false
 }, action) => {
     switch (action.type) {
@@ -14,12 +14,14 @@ const repsReducer = (state = {
             }
 
         case 'ADD_REPS':
+            console.log("Google API data:", action.payload);
+
             return {
                 ...state,
                 addressInput: action.payload.normalizedInput,
                 divisions: action.payload.divisions,
-                offices: action.payload.offices,
-                officials: action.payload.officials,
+                titles: action.payload.offices,
+                reps: action.payload.officials,
                 loading: false
             }
         

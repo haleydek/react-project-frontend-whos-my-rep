@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import repsReducer from './repsReducer';
 
 const rootReducer = combineReducers({
-    reps: repsReducer
+    repsData: repsReducer
 })
 
 export default rootReducer;

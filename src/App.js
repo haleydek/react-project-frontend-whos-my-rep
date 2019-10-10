@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { connect } from 'react-redux';
 import SearchContainer from './containers/SearchContainer';
 import RepsContainer from './containers/RepsContainer';
 
@@ -18,4 +17,4 @@ class App extends React.Component {
   }
 }
 
-export default connect()(App);
+export default App;
