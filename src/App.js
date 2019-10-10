@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import SearchContainer from './containers/SearchContainer';
-import RepsContainer from './containers/RepsContainer';
 
 export const GOOGLE_API_URL = `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.REACT_APP_API_KEY}&address=`;
 
@@ -11,7 +10,6 @@ class App extends React.Component {
     return (
       <div className="App">
         <SearchContainer />
-        <RepsContainer />
       </div>
     );
   }

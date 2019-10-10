@@ -1,13 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchReps } from '../actions/fetchReps';
-import Search from '../components/Search';
+import SearchInput from '../components/SearchInput';
+import SearchResults from '../components/SearchResults';
 
 class SearchContainer extends React.Component {
     render(){
         return (
-            <Search fetchReps={this.props.fetchReps}/>
+            <div>
+                <SearchInput fetchReps={this.props.fetchReps}/>
+                <SearchResults repsData={this.props.repsData || ''}/>
+            </div>
         )
+    }
+}
+
+const mapStateToProps = (state) => {
+    console.log("state", state)
+
+    return {
+        repsData: state.repsData
     }
 }
 
@@ -17,4 +29,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(SearchContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchContainer);
