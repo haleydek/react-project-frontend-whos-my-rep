@@ -12,7 +12,7 @@ const SearchResults = (props) => {
 
     return (
         <div>
-            {repsData.reps.map((rep, id) => <Rep key={id} rep={rep} repId={id} titles={getTitles(id)}/>)}
+            {repsData.reps.map((rep, id) => <Rep key={id} rep={rep} repId={id} titles={getTitles(id)} />)}
         </div>
     )
 }

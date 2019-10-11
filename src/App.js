@@ -15,7 +15,7 @@ class App extends React.Component {
         <div className="App">
           <NavBar />
           <Route exact path="/" component={Home} />
-          <Route path="/reps" component={SearchContainer} />
+          <Route path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
         </div>
       </Router>
     );

@@ -3,13 +3,32 @@ import { connect } from 'react-redux';
 import { fetchReps } from '../actions/fetchReps';
 import SearchInput from '../components/SearchInput';
 import SearchResults from '../components/SearchResults';
+import RepPage from '../components/RepPage';
+import { Route } from 'react-router-dom';
 
 class SearchContainer extends React.Component {
     render(){
+        console.log("SearchContainer match:", this.props.match);
+
         return (
             <div>
-                <SearchInput fetchReps={this.props.fetchReps}/>
-                <SearchResults repsData={this.props.repsData}/>
+                <Route
+                    exact path={this.props.match.url}
+                    render={() => (
+                        <React.Fragment>
+                            <SearchInput fetchReps={this.props.fetchReps}/>
+                            <SearchResults repsData={this.props.repsData}/>
+                        </React.Fragment>
+                    )}
+                />
+
+                <Route
+                    path={`${this.props.match.url}/:repId`}
+                    render={routerProps => (
+                        <RepPage repsData={this.props.repsData} {...routerProps} />
+                    )}
+                />
+                
             </div>
         )
     }
