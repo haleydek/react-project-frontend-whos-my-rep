@@ -9,7 +9,7 @@ class SearchContainer extends React.Component {
         return (
             <div>
                 <SearchInput fetchReps={this.props.fetchReps}/>
-                <SearchResults repsData={this.props.repsData || ''}/>
+                <SearchResults repsData={this.props.repsData}/>
             </div>
         )
     }

@@ -4,31 +4,17 @@ import Rep from './Rep';
 const SearchResults = (props) => {
     const { repsData } = props;
 
-    console.log("SearchResults props:", repsData);
+    const getTitles = (repId) => {
+        const titlesObjArray = repsData.titles.filter(title => title.officialIndices.includes(repId));
+
+        return titlesObjArray.map(titleObj => titleObj.name);
+    }
 
     return (
         <div>
-            {repsData.reps.map((rep, id) => <Rep key={id} rep={rep} repId={id}/>)}
+            {repsData.reps.map((rep, id) => <Rep key={id} rep={rep} repId={id} titles={getTitles(id)}/>)}
         </div>
     )
-
-    // const getRepsWithTitle = (title) => {
-    //     console.log("title in getRepsWithTitle:", title);
-        
-    //     return repsData.reps.filter((rep, index) => {
-    //         if (title.officialIndices.includes(index)) {
-    //             return rep
-    //         }
-    //     })
-    // };
-
-
-
-    // return (
-    //     <div>
-    //         {repsData.titles.map(title => <Rep title={title} reps={getRepsWithTitle(title)}/> )}
-    //     </div>
-    // )
 }
 
 export default SearchResults;
