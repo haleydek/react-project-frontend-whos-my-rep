@@ -1,14 +1,29 @@
 const userReducer = (state = {
+    id: '',
     email: '',
     firstName: '',
-    badgeIds: []
+    badgeIds: [],
+    loading: false
 }, action) => {
+    console.log("user action.type", action.type);
+    console.log("user action.payload", action.payload);
+
     switch (action.type) {
         case 'WAITING_FOR_LOGIN':
-            return state;
+            return {
+                ...state,
+                loading: true
+            }
 
         case 'LOGIN_USER':
-            return state;
+            return {
+                ...state,
+                id: action.payload.id,
+                email: action.payload.email,
+                firstName: action.payload.first_name,
+                badgeIds: action.payload.badges,
+                loading: false
+            }
 
         default:
             return state;

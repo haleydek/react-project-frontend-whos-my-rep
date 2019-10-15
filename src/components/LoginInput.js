@@ -14,7 +14,7 @@ class LoginInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        this.props.fetchUser(this.state.email);
+        this.props.fetchUser(this.state);
 
         this.setState({
             email: ''

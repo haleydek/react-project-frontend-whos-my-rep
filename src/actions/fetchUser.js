@@ -3,7 +3,7 @@ import { RAILS_API_URL } from '../App';
 export const fetchUser = (formData) => {
     return dispatch => {
         dispatch({ type: 'WAITING_FOR_LOGIN' })
-        fetch(RAILS_API_URL + '/login', {
+        fetch((RAILS_API_URL + '/login'), {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
