@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../actions/fetchUser';
 import { Route } from 'react-router-dom';
+import LoginInput from '../components/LoginInput';
 
 class LoginContainer extends React.Component {
     render(){
@@ -12,10 +13,12 @@ class LoginContainer extends React.Component {
                 <Route 
                     exact path={this.props.match.url}
                     render={() => (
-                        <React.Fragment>
-                            <LoginInput fetchUser={this.props.fetchUser} />
-                            <User user={this.props.user} />
-                        </React.Fragment>
+
+                        // need to redirect to user profile after successful login
+                        // <User user={this.props.user} /> 
+
+                        <LoginInput fetchUser={this.props.fetchUser} />
+
                     )}
                 />
             </div>
