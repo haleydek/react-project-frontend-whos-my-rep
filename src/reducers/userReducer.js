@@ -7,7 +7,6 @@ const userReducer = (state = {
     loggedIn: false
 }, action) => {
     console.log("user action.type", action.type);
-    console.log("user action.payload", action.payload);
 
     switch (action.type) {
         case 'PENDING_LOGIN':
@@ -26,12 +25,22 @@ const userReducer = (state = {
                 loading: false,
                 loggedIn: true
             }
-        
-        case 'LOGIN_FAILURE':
+
+        case 'LOADING_USER':
             return {
                 ...state,
-                loading: false,
-                loggedIn: false
+                loading: true,
+                loggedIn: true
+            }
+
+        case 'ADD_USER':
+            return {
+                ...state,
+                id: action.payload.id,
+                email: action.payload.email,
+                firstName: action.payload.first_name,
+                badgeIds: action.payload.badge_ids,
+                loading: false
             }
 
         default:
