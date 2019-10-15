@@ -21,7 +21,7 @@ const userReducer = (state = {
                 id: action.payload.id,
                 email: action.payload.email,
                 firstName: action.payload.first_name,
-                badgeIds: action.payload.badges,
+                badgeIds: action.payload.badge_ids,
                 loading: false
             }
 

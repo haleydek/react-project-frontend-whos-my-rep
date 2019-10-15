@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { fetchUser } from '../actions/fetchUser';
 
 class LoginInput extends React.Component {
     state = {
@@ -23,12 +25,15 @@ class LoginInput extends React.Component {
 
     render(){
         return (
-            <form onSubmit={this.handleSubmit} >
-                <input type='text' value={this.state.email} onChange={this.handleChange} />
-                <input type='submit' />
-            </form>
+            <div>
+                <h2>Log In</h2>
+                <form onSubmit={this.handleSubmit} >
+                    <input type='text' value={this.state.email} onChange={this.handleChange} />
+                    <input type='submit' />
+                </form>
+            </div>
         )
     }
 }
 
-export default LoginInput;
+export default connect(null, { fetchUser })(LoginInput);
