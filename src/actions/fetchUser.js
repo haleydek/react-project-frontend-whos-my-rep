@@ -1,4 +1,4 @@
-export const fetchUser = (formData) => {
+export const fetchUser = (formData, history) => {
     return dispatch => {
         dispatch({ type: 'PENDING_LOGIN' })
         fetch(('/login'), {
@@ -12,13 +12,21 @@ export const fetchUser = (formData) => {
         .then(res => res.json())
         .then(userData => {
 
-            // add user id to localStorage
-            window.localStorage.userId = userData.id
+            // if (userData.message) {
+            //     return dispatch({ type: 'LOGIN_FAILURE', payload: userData })
 
-            // add userData to Redux store
-            return dispatch({ type: 'LOGIN_USER', payload: userData })
+            // } else {
+
+                // add user id to localStorage
+                window.localStorage.userId = userData.id
+
+                // add userData to Redux store
+                return dispatch({ type: 'LOGIN_SUCCESS', payload: userData })
+            // }
         })
-        .catch(error => console.log(error))
+        .then(user => history.push("/"))
+
+        // .then(user => history.push(`/users/${user.payload.id}`))
     }
 }
 

@@ -3,7 +3,8 @@ const userReducer = (state = {
     email: '',
     firstName: '',
     badgeIds: [],
-    loading: false
+    loading: false,
+    loggedIn: false
 }, action) => {
     console.log("user action.type", action.type);
     console.log("user action.payload", action.payload);
@@ -15,14 +16,22 @@ const userReducer = (state = {
                 loading: true
             }
 
-        case 'LOGIN_USER':
+        case 'LOGIN_SUCCESS':
             return {
                 ...state,
                 id: action.payload.id,
                 email: action.payload.email,
                 firstName: action.payload.first_name,
                 badgeIds: action.payload.badge_ids,
-                loading: false
+                loading: false,
+                loggedIn: true
+            }
+        
+        case 'LOGIN_FAILURE':
+            return {
+                ...state,
+                loading: false,
+                loggedIn: false
             }
 
         default:

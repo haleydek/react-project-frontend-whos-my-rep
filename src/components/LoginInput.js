@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchUser } from '../actions/fetchUser';
+import { withRouter } from 'react-router-dom';
 
 class LoginInput extends React.Component {
     state = {
@@ -14,9 +15,11 @@ class LoginInput extends React.Component {
     }
 
     handleSubmit = (event) => {
+        console.log("history prop:", this.props.history)
+
         event.preventDefault();
 
-        this.props.fetchUser(this.state);
+        this.props.fetchUser(this.state, this.props.history)
 
         this.setState({
             email: ''
@@ -24,6 +27,7 @@ class LoginInput extends React.Component {
     }
 
     render(){
+        console.log("login props:", this.props.history)
         return (
             <div>
                 <h2>Log In</h2>
@@ -36,4 +40,4 @@ class LoginInput extends React.Component {
     }
 }
 
-export default connect(null, { fetchUser })(LoginInput);
+export default withRouter(connect(null, { fetchUser })(LoginInput));
