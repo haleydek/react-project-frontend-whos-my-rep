@@ -1,6 +1,6 @@
 export const fetchUser = (formData) => {
     return dispatch => {
-        dispatch({ type: 'WAITING_FOR_LOGIN' })
+        dispatch({ type: 'PENDING_LOGIN' })
         fetch(('/login'), {
             method: 'POST',
             headers: {
@@ -11,7 +11,6 @@ export const fetchUser = (formData) => {
         })
         .then(res => res.json())
         .then(userData => {
-            console.log("postLogin res data:", userData);
 
             // add user id to localStorage
             window.localStorage.userId = userData.id

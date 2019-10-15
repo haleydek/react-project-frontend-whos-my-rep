@@ -9,7 +9,7 @@ const userReducer = (state = {
     console.log("user action.payload", action.payload);
 
     switch (action.type) {
-        case 'WAITING_FOR_LOGIN':
+        case 'PENDING_LOGIN':
             return {
                 ...state,
                 loading: true
