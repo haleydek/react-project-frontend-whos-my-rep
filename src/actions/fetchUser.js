@@ -1,6 +1,6 @@
 import { RAILS_API_URL } from '../App';
 
-export const postLogin = (formData) => {
+export const fetchUser = (formData) => {
     return dispatch => {
         dispatch({ type: 'WAITING_FOR_LOGIN' })
         fetch(RAILS_API_URL + '/login', {
