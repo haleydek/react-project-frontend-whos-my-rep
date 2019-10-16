@@ -1,4 +1,4 @@
-export const badgesReducer = (state = {
+const badgesReducer = (state = {
     badges: [],
     loading: false
 }, action) => {
@@ -20,3 +20,5 @@ export const badgesReducer = (state = {
             return state;
     }
 }
+
+export default badgesReducer;
