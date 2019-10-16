@@ -7,6 +7,8 @@ const userReducer = (state = {
     loggedIn: false
 }, action) => {
 
+    console.log("userReducer action:", action.type)
+
     switch (action.type) {
         case 'PENDING_LOGIN':
             return {

@@ -8,8 +8,6 @@ class User extends React.Component {
         const { user } = this.props;
         const { match } = this.props;
 
-        console.log("user match", match);
-
         if (!!user.loggedIn && parseInt(match.params.id, 10) === parseInt(user.id, 10)) {
             return (
                 <div>
