@@ -8,7 +8,7 @@ class User extends React.Component {
         const { user } = this.props;
 
         return (
-            <div id={user.id} >
+            <div>
                 <h2>{user.firstName}</h2>
                 <p>{user.email}</p>
                 <BadgesContainer />
