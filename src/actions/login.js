@@ -12,21 +12,20 @@ export const login = (formData, history) => {
         .then(res => res.json())
         .then(userData => {
 
-            // if (userData.message) {
-            //     return dispatch({ type: 'LOGIN_FAILURE', payload: userData })
+            if (userData.message) {
+                dispatch({ type: 'LOGIN_FAILURE' })
+                history.push("/login")
 
-            // } else {
+            } else {
 
                 // add user id to localStorage
                 window.localStorage.userId = userData.id
 
                 // add userData to Redux store
-                return dispatch({ type: 'LOGIN_SUCCESS', payload: userData })
-            // }
+                dispatch({ type: 'LOGIN_SUCCESS', payload: userData })
+                history.push(`/users/${userData.id}`)
+            }
         })
-        .then(user => history.push("/"))
-
-        // .then(user => history.push(`/users/${user.payload.id}`))
     }
 }
 

@@ -5,10 +5,10 @@ export const fetchUser = (userId, history) => {
         .then(res => res.json())
         .then(userData => {
                 // add userData to Redux store
-                return dispatch({ type: 'ADD_USER', payload: userData })
-        })
-        .then(user => history.push("/"))
+                dispatch({ type: 'ADD_USER', payload: userData })
 
-        // .then(user => history.push(`/users/${user.payload.id}`))
+                return userData
+        })
+        .then(user => history.push(`/users/${user.id}`))
     }
 }

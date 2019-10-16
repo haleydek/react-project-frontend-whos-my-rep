@@ -10,7 +10,6 @@ const badgesReducer = (state = {
             }
 
         case 'ADD_BADGES':
-            console.log("add badges:", action.payload)
             return {
                 ...state,
                 badges: [...action.payload],

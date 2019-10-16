@@ -6,7 +6,6 @@ const userReducer = (state = {
     loading: false,
     loggedIn: false
 }, action) => {
-    console.log("user action.type", action.type);
 
     switch (action.type) {
         case 'PENDING_LOGIN':
@@ -26,6 +25,13 @@ const userReducer = (state = {
                 loggedIn: true
             }
 
+        case 'LOGIN_FAILURE':
+                return {
+                    ...state,
+                    loading: false,
+                    loggedIn: false
+                }
+
         case 'LOADING_USER':
             return {
                 ...state,
@@ -41,6 +47,17 @@ const userReducer = (state = {
                 firstName: action.payload.first_name,
                 badgeIds: action.payload.badge_ids,
                 loading: false
+            }
+
+        case 'LOGOUT_USER':
+            return {
+                ...state,
+                id: '',
+                email: '',
+                firstName: '',
+                badgeIds: [],
+                loading: false,
+                loggedIn: false
             }
 
         default:

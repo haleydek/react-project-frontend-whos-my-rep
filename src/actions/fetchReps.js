@@ -9,6 +9,5 @@ export const fetchReps = (address) => {
             console.log(resJSON)
             return dispatch({ type: 'ADD_REPS', payload: resJSON })
         })
-        .catch(error => console.log(error));
     }
 }

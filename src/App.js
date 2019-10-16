@@ -10,6 +10,7 @@ import LoginInput from './components/LoginInput';
 import User from './components/User';
 import { fetchUser } from './actions/fetchUser';
 import { fetchBadges } from './actions/fetchBadges';
+import PrivateRoute from './components/PrivateRoute';
 
 export const GOOGLE_API_URL = `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.REACT_APP_API_KEY}&address=`;
 
@@ -32,7 +33,7 @@ class App extends React.Component {
       <Router history={history}>
         <div className="App">
           <NavBar />
-          <Route path="/users/:id" render={routerProps => <User {...routerProps} />} />
+          <PrivateRoute path="/users/:id" render={routerProps => <User {...routerProps} />} />
           <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
           <Route path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
           <Route path="/login" render={routerProps => <LoginInput {...routerProps} />} />
