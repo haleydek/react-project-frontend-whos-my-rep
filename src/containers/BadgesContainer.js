@@ -5,9 +5,11 @@ import Badge from '../components/Badge';
 class BadgesContainer extends React.Component{
     render(){
         return (
-            this.props.badges.map(badge => (
-                <Badge key={badge.id} id={badge.id} content={badge.content} />)
-            )
+            <div className="badges">
+                {this.props.badges.map(badge => (
+                    <Badge key={badge.id} id={badge.id} content={badge.content} />)
+                )}
+            </div>
         )
     }
 }
