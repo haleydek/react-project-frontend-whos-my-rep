@@ -12,7 +12,7 @@ const badgesReducer = (state = {
         case 'ADD_BADGES':
             return {
                 ...state,
-                badges: action.payload.badges,
+                badges: action.payload,
                 loading: false
             }
 

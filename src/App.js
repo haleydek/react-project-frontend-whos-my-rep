@@ -9,6 +9,7 @@ import SearchContainer from './containers/SearchContainer';
 import LoginInput from './components/LoginInput';
 import User from './components/User';
 import { fetchUser } from './actions/fetchUser';
+import { fetchBadges } from './actions/fetchBadges';
 
 export const GOOGLE_API_URL = `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.REACT_APP_API_KEY}&address=`;
 
@@ -17,6 +18,8 @@ const history = createBrowserHistory();
 class App extends React.Component {
 
   componentDidMount(){
+    this.props.fetchBadges();
+
     if (localStorage.userId){
       this.props.fetchUser(localStorage.userId, history)
     } else {
@@ -39,4 +42,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(null, { fetchUser })(App);
+export default connect(null, { fetchUser, fetchBadges })(App);
