@@ -34,6 +34,19 @@ const userReducer = (state = {
                     loggedIn: false
                 }
 
+        case 'PENDING_SIGNUP':
+            return {
+                ...state,
+                loading: true
+            }
+        
+        case 'SIGNUP_FAILURE':
+            return {
+                ...state,
+                loading: false,
+                loggedIn: false
+            }
+
         case 'LOADING_USER':
             return {
                 ...state,
