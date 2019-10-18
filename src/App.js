@@ -7,6 +7,7 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import SearchContainer from './containers/SearchContainer';
 import LoginInput from './components/LoginInput';
+import SignUpInput from './components/SignUpInput';
 import User from './components/User';
 import { fetchUser } from './actions/fetchUser';
 import { fetchBadges } from './actions/fetchBadges';
