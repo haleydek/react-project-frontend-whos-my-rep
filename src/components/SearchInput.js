@@ -25,6 +25,7 @@ class SearchInput extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
+                    <label>Enter your address to find your representatives</label>
                     <input type="text" value={this.state.address} onChange={this.handleChange} />
                     <input type="submit" value="Search" />
                 </form>

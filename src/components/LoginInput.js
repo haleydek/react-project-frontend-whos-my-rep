@@ -15,8 +15,6 @@ class LoginInput extends React.Component {
     }
 
     handleSubmit = (event) => {
-        console.log("history prop:", this.props.history)
-
         event.preventDefault();
 
         this.props.login(this.state, this.props.history)
@@ -27,12 +25,12 @@ class LoginInput extends React.Component {
     }
 
     render(){
-        console.log("login props:", this.props.history)
         return (
             <div>
                 <h2>Log In</h2>
                 <form onSubmit={this.handleSubmit} >
-                    <input type='text' value={this.state.email} onChange={this.handleChange} />
+                    <label>Email</label>
+                    <input type='text' value={this.state.email} onChange={this.handleChange} /><br />
                     <input type='submit' />
                 </form>
             </div>
