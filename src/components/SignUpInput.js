@@ -17,7 +17,7 @@ class SignUpInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
 
-        this.props.login(this.state, this.props.history)
+        this.props.signup(this.state, this.props.history)
 
         this.setState({
             email: '',
