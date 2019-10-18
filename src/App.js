@@ -34,9 +34,10 @@ class App extends React.Component {
         <div className="App">
           <NavBar />
           <PrivateRoute path="/users/:id" render={routerProps => <User {...routerProps} />} />
-          <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
           <Route path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
-          <Route path="/login" render={routerProps => <LoginInput {...routerProps} />} />
+          <Route exact path="/login" render={routerProps => <LoginInput {...routerProps} />} />
+          <Route exact path="/signup" render={routerProps => <SignUpInput {...routerProps} />} />
+          <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
         </div>
       </Router>
     );
