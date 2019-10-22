@@ -8,6 +8,7 @@ const userReducer = (state = {
 }, action) => {
 
     console.log("userReducer action:", action.type)
+    console.log("user action.payload", action.payload)
 
     switch (action.type) {
         case 'PENDING_LOGIN':
@@ -73,6 +74,19 @@ const userReducer = (state = {
                 badgeIds: [],
                 loading: false,
                 loggedIn: false
+            }
+
+        case 'PENDING_BADGE_IDS_UPDATE':
+            return {
+                ...state,
+                loading: true
+            }
+
+        case 'UPDATE_BADGE_IDS':
+            return {
+                ...state,
+                loading: false,
+                badgeIds: action.payload.badge_ids
             }
 
         default:
