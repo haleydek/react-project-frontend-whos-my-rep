@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import User from '../components/User';
-import Badges from '../components/Badges';
+import User from '../components/userProfile/User';
+import Badges from '../components/userProfile/Badges';
 import { updateUsersBadges } from '../actions/updateUsersBadges';
 
 class UserProfileContainer extends React.Component {
