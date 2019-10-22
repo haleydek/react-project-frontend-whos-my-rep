@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchReps } from '../actions/fetchReps';
 import SearchInput from '../components/search/SearchInput';
 import SearchResults from '../components/search/SearchResults';
-import RepPage from '../components/search/RepPage';
+import RepPage from '../components/repPage/RepPage';
 import { Route } from 'react-router-dom';
 
 class SearchContainer extends React.Component {
