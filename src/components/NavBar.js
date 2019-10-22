@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { logout } from '../actions/logout';
 import Button from './Button';
@@ -12,7 +13,7 @@ class NavBar extends React.Component {
     }
 
     render(){
-        const { loggedIn, userId } = this.props;
+        const { loggedIn, userId, location } = this.props;
 
         if (loggedIn === true) {
             return (
@@ -28,8 +29,10 @@ class NavBar extends React.Component {
             <div className="nav">
                 <NavLink to="/">Home</NavLink><br />
                 <NavLink to="/reps">Search Reps</NavLink><br />
-                <NavLink to="/login">Log In</NavLink><br />
-                <NavLink to="/signup">Sign Up</NavLink>
+                { location.pathname === "/login"
+                    ? <NavLink to="/signup">Sign Up</NavLink>
+                    : <NavLink to="/login">Log In</NavLink>
+                }
             </div>
         )
     }
@@ -42,4 +45,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, { logout })(NavBar);
+export default withRouter(connect(mapStateToProps, { logout })(NavBar));
