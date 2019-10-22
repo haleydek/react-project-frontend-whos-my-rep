@@ -23,7 +23,7 @@ class SearchInput extends React.Component {
 
     render(){
         return (
-            <div>
+            <div className="search-input">
                 <form onSubmit={this.handleSubmit}>
                     <label>Enter your address to find your representatives</label>
                     <input type="text" value={this.state.address} onChange={this.handleChange} />
