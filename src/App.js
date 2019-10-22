@@ -8,7 +8,7 @@ import Home from './components/Home';
 import SearchContainer from './containers/SearchContainer';
 import LoginInput from './components/LoginInput';
 import SignUpInput from './components/SignUpInput';
-import User from './components/User';
+import UserProfileContainer from './containers/UserProfileContainer';
 import { fetchUser } from './actions/fetchUser';
 import { fetchBadges } from './actions/fetchBadges';
 import PrivateRoute from './components/PrivateRoute';
@@ -34,7 +34,7 @@ class App extends React.Component {
       <Router history={history}>
         <div className="App">
           <NavBar />
-          <PrivateRoute path="/users/:id" render={routerProps => <User {...routerProps} />} />
+          <PrivateRoute path="/users/:id" render={routerProps => <UserProfileContainer {...routerProps} />} />
           <Route path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
           <Route exact path="/login" render={routerProps => <LoginInput {...routerProps} />} />
           <Route exact path="/signup" render={routerProps => <SignUpInput {...routerProps} />} />
