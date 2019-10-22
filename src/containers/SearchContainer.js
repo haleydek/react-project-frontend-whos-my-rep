@@ -8,9 +8,9 @@ import { Route } from 'react-router-dom';
 
 class SearchContainer extends React.Component {
     render(){
-        console.log("SearchContainer match:", this.props.match);
-
         const { match, fetchReps, repsData } = this.props;
+
+        console.log("SearchContainer match:", match);
 
         return (
             <React.Fragment>
