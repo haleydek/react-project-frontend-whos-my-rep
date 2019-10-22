@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchReps } from '../actions/fetchReps';
-import SearchInput from '../components/SearchInput';
+import SearchInput from '../components/search/SearchInput';
 import SearchResults from '../components/SearchResults';
-import RepPage from '../components/RepPage';
+import RepPage from '../components/search/RepPage';
 import { Route } from 'react-router-dom';
 
 class SearchContainer extends React.Component {
