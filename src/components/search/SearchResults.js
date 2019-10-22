@@ -10,9 +10,15 @@ const SearchResults = (props) => {
         return titlesObjArray.map(titleObj => titleObj.name);
     }
 
+    const renderReps = (repsData) => {
+        return repsData.reps.map((rep, id) => {
+            return <Rep key={id} rep={rep} repId={id} titles={getTitles(id)} />
+        })
+    }
+
     return (
-        <div>
-            {repsData.reps.map((rep, id) => <Rep key={id} rep={rep} repId={id} titles={getTitles(id)} />)}
+        <div className="search-results">
+            {renderReps(repsData)}
         </div>
     )
 }
