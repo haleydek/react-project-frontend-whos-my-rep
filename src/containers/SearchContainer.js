@@ -10,26 +10,27 @@ class SearchContainer extends React.Component {
     render(){
         console.log("SearchContainer match:", this.props.match);
 
+        const { match, fetchReps, repsData } = this.props;
+
         return (
-            <div>
+            <React.Fragment>
                 <Route
-                    exact path={this.props.match.url}
+                    exact path={match.url}
                     render={() => (
-                        <React.Fragment>
-                            <SearchInput fetchReps={this.props.fetchReps}/>
-                            <SearchResults repsData={this.props.repsData}/>
-                        </React.Fragment>
+                        <div className="search-container">
+                            <SearchInput fetchReps={fetchReps}/>
+                            <SearchResults repsData={repsData}/>
+                        </div>
                     )}
                 />
 
                 <Route
-                    path={`${this.props.match.url}/:repId`}
+                    path={`${match.url}/:repId`}
                     render={routerProps => (
-                        <RepPage repsData={this.props.repsData} {...routerProps} />
+                        <RepPage repsData={repsData} {...routerProps} />
                     )}
                 />
-                
-            </div>
+            </React.Fragment>
         )
     }
 }
