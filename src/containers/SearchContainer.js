@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchReps } from '../actions/fetchReps';
 import SearchInput from '../components/search/SearchInput';
-import SearchResults from '../components/SearchResults';
+import SearchResults from '../components/search/SearchResults';
 import RepPage from '../components/search/RepPage';
 import { Route } from 'react-router-dom';
 

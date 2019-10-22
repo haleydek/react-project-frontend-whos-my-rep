@@ -35,6 +35,7 @@ class App extends React.Component {
         <div className="App">
           <NavBar />
           <PrivateRoute path="/users/:id" render={routerProps => <UserProfileContainer {...routerProps} />} />
+          {/* "/reps/:repId" route is defined in SearchContainer */}
           <Route path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
           <Route exact path="/login" render={routerProps => <LoginInput {...routerProps} />} />
           <Route exact path="/signup" render={routerProps => <SignUpInput {...routerProps} />} />
