@@ -7,6 +7,7 @@ const ContactCard = (props) => {
     const getEachContact = (prop) => {
         // example structure of prop passed in (always an array):
         //   props.phones = ["(888) 888-8888", "(222) 222-2222"]
+        //   props.addresses = [{ line1: "7 Beach St", ... }, { line1: "1202 5th St", ... }]
 
         if (!!prop) {
             return prop.map((contact, index) => returnJSX(prop, contact, index))
