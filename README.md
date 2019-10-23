@@ -1,68 +1,43 @@
+# Who's My Rep?
+
+"Who's My Rep?" is a React-Redux app that encourages people to be more engaged and informed citizens.
+
+Use this app to look up your local, state, and federal representatives by entering your address. Challenge yourself to get involved in your community and earn engagement badges when you complete tasks listed in your profile.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## API Reference
 
-In the project directory, you can run:
+When a user enters their address to look up their representatives, the app queries the Representatives collection from the [Google Civic Information API](https://developers.google.com/civic-information/docs/v2/representatives).
 
-### `npm start`
+A [Rails API](https://github.com/haleydek/react-project-backend-whos-my-rep) is used to persist User, Badge, and UsersBadge data.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+1. Fork and clone this repo and the [Rails API](https://github.com/haleydek/react-project-backend-whos-my-rep).
 
-### `npm test`
+2. cd into this repo and run `$ npm install` in your terminal.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Follow the [instructions](https://developers.google.com/civic-information/docs/using_api) to request an API key for the Google Civic Information API.
 
-### `npm run build`
+4. Check that you are in the top-level directory of this repo in your terminal. Enter `$ touch .env`.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. Add `.env` to the `gitignore` file.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+6. Copy and paste `REACT_APP_API_KEY=''` into `.env`. Copy and paste your Google API key inbetween the `''`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+7. cd into the Rails API.
 
-### `npm run eject`
+8. Run `$ rake start` in your terminal. The app will open automatically in your browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   This command will launch both the Rails API server and the frontend's Webpack dev server. The Webpack dev server will proxy requests intended for the Rails API server. For more info, check out [Foreman](https://github.com/ddollar/foreman) and this [blog post](https://www.fullstackreact.com/articles/how-to-get-create-react-app-to-work-with-your-rails-api/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+9. When you are finished using the app, simply exit the window in your browser and enter `CTRL + C` in your terminal to stop running the servers.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Contribution
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Please fork and clone this repo and the [Rails API](https://github.com/haleydek/react-project-backend-whos-my-rep) repo if you would like to make your own changes.
 
-## Learn More
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[MIT License](./LICENSE)
