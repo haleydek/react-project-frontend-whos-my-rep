@@ -30,9 +30,7 @@ class UserProfileContainer extends React.Component {
             )
 
         } else {
-
             return <Redirect to="/login" />
-
         }
     }
 }
