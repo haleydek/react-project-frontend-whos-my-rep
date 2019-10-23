@@ -1,5 +1,6 @@
 import React from 'react';
 import Badge from './Badge';
+import BadgeHeader from './BadgeHeader';
 
 const Badges = (props) => {
 
@@ -24,6 +25,7 @@ const Badges = (props) => {
 
     return (
         <div className="badges">
+            <BadgeHeader />
             {props.badges.map(badge => (
                 <Badge
                     key={badge.id}
