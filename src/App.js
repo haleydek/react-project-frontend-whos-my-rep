@@ -12,6 +12,7 @@ import UserProfileContainer from './containers/UserProfileContainer';
 import { fetchUser } from './actions/fetchUser';
 import { fetchBadges } from './actions/fetchBadges';
 import PrivateRoute from './components/PrivateRoute';
+import RepContainer from './containers/RepContainer';
 
 export const GOOGLE_API_URL = `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.REACT_APP_API_KEY}&address=`;
 
@@ -35,8 +36,8 @@ class App extends React.Component {
         <div className="App">
           <NavBar />
           <PrivateRoute path="/users/:id" render={routerProps => <UserProfileContainer {...routerProps} />} />
-          {/* "/reps/:repId" route is defined in SearchContainer */}
-          <Route path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
+          <Route path="/reps/:repId" render={routerProps => <RepContainer {...routerProps} />} />
+          <Route exact path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
           <Route exact path="/login" render={routerProps => <LoginInput {...routerProps} />} />
           <Route exact path="/signup" render={routerProps => <SignUpInput {...routerProps} />} />
           <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
