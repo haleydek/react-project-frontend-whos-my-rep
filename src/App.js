@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 import { connect } from 'react-redux';
-import './App.scss';
+import './stylesheets/App.scss';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
 import SearchContainer from './containers/SearchContainer';
