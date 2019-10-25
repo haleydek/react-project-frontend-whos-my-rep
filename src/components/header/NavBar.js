@@ -2,8 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
-import { logout } from '../actions/logout';
-import Button from './Button';
+import { logout } from '../../actions/logout';
+import Button from '../Button';
 
 class NavBar extends React.Component {
 
@@ -17,23 +17,23 @@ class NavBar extends React.Component {
 
         if (loggedIn === true) {
             return (
-                <div className="nav">
+                <nav>
                     <NavLink to="/">Home</NavLink><br />
                     <NavLink to="/reps">Search Reps</NavLink><br />
                     <NavLink to={`/users/${userId}`}>My Profile</NavLink><br />
                     <Button text="Log Out" onClick={this.handleClick} /><br />
-                </div>
+                </nav>
             )
         }
         return (
-            <div className="nav">
+            <nav>
                 <NavLink to="/">Home</NavLink><br />
                 <NavLink to="/reps">Search Reps</NavLink><br />
                 { location.pathname === "/login"
                     ? <NavLink to="/signup">Sign Up</NavLink>
                     : <NavLink to="/login">Log In</NavLink>
                 }
-            </div>
+            </nav>
         )
     }
 }

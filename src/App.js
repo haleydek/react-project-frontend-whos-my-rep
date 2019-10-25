@@ -1,17 +1,17 @@
+import './stylesheets/App.scss';
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 import { connect } from 'react-redux';
-import './stylesheets/App.scss';
-import NavBar from './components/NavBar';
-import Home from './components/Home';
+import HeaderContainer from './containers/HeaderContainer';
 import SearchContainer from './containers/SearchContainer';
+import UserProfileContainer from './containers/UserProfileContainer';
+import RepContainer from './containers/RepContainer';
+import Home from './components/Home';
 import LoginInput from './components/LoginInput';
 import SignUpInput from './components/SignUpInput';
-import UserProfileContainer from './containers/UserProfileContainer';
 import { fetchUser } from './actions/fetchUser';
 import { fetchBadges } from './actions/fetchBadges';
-import RepContainer from './containers/RepContainer';
 
 export const GOOGLE_API_URL = `https://www.googleapis.com/civicinfo/v2/representatives?key=${process.env.REACT_APP_API_KEY}&address=`;
 
@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <Router history={history}>
         <div className="App">
-          <NavBar />
+          <HeaderContainer />
           <Route path="/users/:id" render={routerProps => <UserProfileContainer {...routerProps} />} />
           <Route path="/reps/:repId" render={routerProps => <RepContainer {...routerProps} />} />
           <Route exact path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
