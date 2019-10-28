@@ -10,7 +10,7 @@ class SearchContainer extends React.Component {
         const { fetchReps, repsData } = this.props;
 
         return (
-            <div className="search-container">
+            <div className="container">
                 <SearchInput fetchReps={fetchReps}/>
                 <SearchResults repsData={repsData}/>
             </div>

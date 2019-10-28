@@ -26,7 +26,7 @@ class LoginInput extends React.Component {
 
     render(){
         return (
-            <div>
+            <div className="container">
                 <h2>Log In</h2>
                 <form onSubmit={this.handleSubmit} >
                     <label>Email</label>

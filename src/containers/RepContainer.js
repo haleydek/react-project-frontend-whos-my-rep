@@ -9,7 +9,7 @@ class RepContainer extends React.Component {
         const { rep } = this.props;
 
         return (
-            <div>
+            <div className="container">
                 <h1>{rep.name}</h1>
                 <p>{rep.party}</p>
                 <ContactCard

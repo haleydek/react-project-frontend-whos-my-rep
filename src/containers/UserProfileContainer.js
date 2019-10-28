@@ -15,7 +15,7 @@ class UserProfileContainer extends React.Component {
         if (!!user.loggedIn && parseInt(match.params.id, 10) === parseInt(user.id, 10)) {
 
             return (
-                <div className="user-profile-container">
+                <div className="container">
                     <User
                         firstName={user.firstName}
                         email={user.email}
