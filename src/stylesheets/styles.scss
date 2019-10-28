@@ -1,14 +1,20 @@
 @import "variables";
 
 header {
+    margin-bottom: 20px;
+    width: 100%;
+    padding-bottom: 24px;
+    padding-top: 24px;
     display: flex;
 
     .main-title {
-        color: $primary-color;
+        color: white;
         font-family: 'Sanchez', serif;
         font-size: 20px;
-        border: solid;
+        margin-left: 24px;
         padding: 10px;
+        background-color: $primary-color-light;
+        width: $main-title-width;
 
         .title-wrapper-1 {
             display: grid;
@@ -28,6 +34,31 @@ header {
             }
         }
     }
+
+    nav {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-left: 48px;
+        text-align: left;
+
+        a {
+            color: $secondary-color;
+            height: max-content;
+            padding: 10px 32px 10px 32px;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
 }
 
 body {

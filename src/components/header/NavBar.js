@@ -18,20 +18,20 @@ class NavBar extends React.Component {
         if (loggedIn === true) {
             return (
                 <nav>
-                    <NavLink to="/">Home</NavLink><br />
-                    <NavLink to="/reps">Search Reps</NavLink><br />
-                    <NavLink to={`/users/${userId}`}>My Profile</NavLink><br />
+                    <NavLink to="/">HOME</NavLink><br />
+                    <NavLink to="/reps">FIND MY REPS</NavLink><br />
+                    <NavLink to={`/users/${userId}`}>PROFILE</NavLink><br />
                     <Button text="Log Out" onClick={this.handleClick} /><br />
                 </nav>
             )
         }
         return (
             <nav>
-                <NavLink to="/">Home</NavLink><br />
-                <NavLink to="/reps">Search Reps</NavLink><br />
+                <NavLink to="/">HOME</NavLink><br />
+                <NavLink to="/reps">FIND MY REPS</NavLink><br />
                 { location.pathname === "/login"
-                    ? <NavLink to="/signup">Sign Up</NavLink>
-                    : <NavLink to="/login">Log In</NavLink>
+                    ? <NavLink to="/signup">SIGN UP</NavLink>
+                    : <NavLink to="/login">LOG IN</NavLink>
                 }
             </nav>
         )
