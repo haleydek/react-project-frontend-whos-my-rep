@@ -1,0 +1,53 @@
+@import 'variables';
+
+header {
+    width: 100%;
+    display: flex;
+
+    .main-title {
+        color: white;
+        font-family: $heading-font-family;
+        font-size: 20px;
+        padding: 10px 24px 10px 24px;
+        background-color: $primary-color-light;
+        width: $main-title-width;
+
+        .title-wrapper-1 {
+            display: grid;
+        }
+
+        .title-wrapper-2 {
+            display: inline-grid;
+            grid: 25px 25px / auto 27px;
+
+            #question-mark {
+                grid-column: 2;
+                grid-row: 1 / -1;
+                font-family: $question-mark-font-family;
+                font-size: 50px;
+                line-height: 40px;
+                text-align: center;
+            }
+        }
+    }
+
+    nav {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-left: 48px;
+        text-align: left;
+    }
+
+    nav a {
+        color: $secondary-color;
+        height: max-content;
+        padding: 10px 32px 10px 32px;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: $primary-color;
+    }
+}

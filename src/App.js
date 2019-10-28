@@ -34,12 +34,14 @@ class App extends React.Component {
       <Router history={history}>
         <div className="App">
           <HeaderContainer />
-          <Route path="/users/:id" render={routerProps => <UserProfileContainer {...routerProps} />} />
-          <Route path="/reps/:repId" render={routerProps => <RepContainer {...routerProps} />} />
-          <Route exact path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
-          <Route exact path="/login" render={routerProps => <LoginInput {...routerProps} />} />
-          <Route exact path="/signup" render={routerProps => <SignUpInput {...routerProps} />} />
-          <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
+          <div className="content-area">
+            <Route path="/users/:id" render={routerProps => <UserProfileContainer {...routerProps} />} />
+            <Route path="/reps/:repId" render={routerProps => <RepContainer {...routerProps} />} />
+            <Route exact path="/reps" render={routerProps => <SearchContainer {...routerProps} />} />
+            <Route exact path="/login" render={routerProps => <LoginInput {...routerProps} />} />
+            <Route exact path="/signup" render={routerProps => <SignUpInput {...routerProps} />} />
+            <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
+          </div>
         </div>
       </Router>
     );
