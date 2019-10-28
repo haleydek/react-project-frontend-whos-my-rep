@@ -31,9 +31,9 @@ class SignUpInput extends React.Component {
                 <h2>Sign Up</h2>
                 <form onSubmit={this.handleSubmit} >
                     <label>Email</label>
-                    <input type='text' name='email' value={this.state.email} onChange={this.handleChange} /><br />
+                    <input type='text' name='email' value={this.state.email} onChange={this.handleChange} placeholder="Your email..."/>
                     <label>First Name</label>
-                    <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange} /><br />
+                    <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange} placeholder="Your first name..."/>
                     <input type='submit' />
                 </form>
             </div>

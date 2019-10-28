@@ -30,7 +30,7 @@ class LoginInput extends React.Component {
                 <h2>Log In</h2>
                 <form onSubmit={this.handleSubmit} >
                     <label>Email</label>
-                    <input type='text' value={this.state.email} onChange={this.handleChange} /><br />
+                    <input type='text' value={this.state.email} onChange={this.handleChange} placeholder="Your email..."/>
                     <input type='submit' />
                 </form>
             </div>
