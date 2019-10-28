@@ -1,6 +1,7 @@
 @import "variables";
 @import 'header';
 @import 'form';
+@import 'search';
 
 html, body {
     margin: 0;
@@ -24,6 +25,11 @@ html, body {
             padding-top: 42px;
         }
     }
+}
+
+.container {
+    width: max-content;
+    padding: 1rem;
 }
 
 a {
