@@ -17,9 +17,14 @@ class Badges extends React.Component {
 
         console.log("event's badge id", event.target.parentElement.id);
 
-        // accepts user id and badge id as args
-        // Badge component's id prop = badge id
-        this.props.updateUsersBadges(this.props.userId, event.target.parentElement.id)
+        if (event.target.classList.contains("checkmark")) {
+            
+            // accepts user id and badge id as args
+            // Badge component's id prop = badge id
+            return this.props.updateUsersBadges(this.props.userId, event.target.parentElement.id)
+        }
+
+
     }
 
     isUsersBadge = (badgeId) => {
