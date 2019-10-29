@@ -14,18 +14,19 @@ html, body {
 
 #root {
     height: 100%;
+    display: flex;
+    flex-flow: column;
 
-    .App {
-        display: flex;
-        flex-flow: column;
-        height: 100%;
+    .header {
+        flex-grow: 0;
+    }
     
-        .content-area {
-            flex-grow: 1;
-            background-color: $background-color;
-            padding-left: 160px;
-            padding-top: 42px;
-        }
+    .content-area {
+        flex-grow: 1;
+        overflow-y: auto;
+        background-color: $background-color;
+        padding-left: 160px;
+        padding-top: 42px;
     }
 }
 
@@ -61,14 +62,3 @@ button {
 button:hover {
     opacity: 1;
 }
-
-    // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    //   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    //   sans-serif;
-    // -webkit-font-smoothing: antialiased;
-    // -moz-osx-font-smoothing: grayscale;
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
-  }

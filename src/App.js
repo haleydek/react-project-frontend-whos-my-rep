@@ -32,7 +32,6 @@ class App extends React.Component {
   render() {
     return (
       <Router history={history}>
-        <div className="App">
           <HeaderContainer />
           <div className="content-area">
             <Route path="/users/:id" render={routerProps => <UserProfileContainer {...routerProps} />} />
@@ -42,7 +41,6 @@ class App extends React.Component {
             <Route exact path="/signup" render={routerProps => <SignUpInput {...routerProps} />} />
             <Route exact path="/" render={routerProps => <Home {...routerProps} />} />
           </div>
-        </div>
       </Router>
     );
   }

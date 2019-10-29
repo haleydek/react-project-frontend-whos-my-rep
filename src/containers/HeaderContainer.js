@@ -5,10 +5,12 @@ import NavBar from '../components/header/NavBar';
 class HeaderContainer extends React.Component {
     render(){
         return (
-            <header>
-                <MainTitle />
-                <NavBar />
-            </header>
+            <div className="header">
+                <header>
+                    <MainTitle />
+                    <NavBar />
+                </header>
+            </div>
         )
     }
 }
