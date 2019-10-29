@@ -20,7 +20,7 @@ const ContactCard = (props) => {
                 return <Address key={index} address={formatAddress(contact)} />
             
             case props.channels:
-                return <ContactLink key={index} href={`https://${contact.type}.com/${contact.id}`} linkText={contact.type} class={"social"} />
+                return <ContactLink key={index} href={`https://${contact.type}.com/${contact.id}`} type={contact.type} class="social" />
 
             case props.urls:
                 return <ContactLink key={index} href={contact} linkText={contact} class={"official-site"}/>
